@@ -7,10 +7,12 @@ CORS(app)
 def query():
     content = request.json
     print(content)
+    ## TODO: Add Python script method here
     return content
 
 @app.route('/add', methods=['POST'])
 def add():
     content = request.json
     print(content)
+    ## TODO: Add Python script method here
     return content
