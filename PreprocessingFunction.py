@@ -249,9 +249,9 @@ def readDataFrame(mapping, dataframe):
 
 def processMappedFile(mapping, fileName, jurisdiction):
     global dataframe
-    global StateName_Input
+    global stateName
     dataframe = pd.read_excel(fileName)
-    StateName_Input = jurisdiction
+    stateName = jurisdiction
     readDataFrame(mapping, dataframe)
 
 #processMappedFile(mapping)

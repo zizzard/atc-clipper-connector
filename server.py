@@ -2,6 +2,7 @@ from flask import  Flask, request
 from flask_cors import CORS
 from PreprocessingFunction import processMappedFile
 import os
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -22,15 +23,12 @@ def add():
     try:
         jurisdiction = form["jurisdiction"]
         reportDate = form["reportDate"]
-        mapping = form["mapping"]
+        mapping = json.loads(form["mapping"])
         file = files["data"]
     except:
         return {"failure": 'failure'}
 
-    print(jurisdiction)
-    print(reportDate)
-    print(mapping)
-    print(file)
+
 
     processMappedFile(mapping, file, jurisdiction)
 
